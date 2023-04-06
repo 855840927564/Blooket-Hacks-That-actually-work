@@ -1,0 +1,7 @@
+let i = document.createElement('iframe');
+document.body.append(i);
+window.prompt = i.contentWindow.prompt.bind(window);
+i.remove();
+	const amount = prompt('How many Tokens do you want to Spoof?')
+	const stateNode = Object.values(document.querySelector('#app > div > div'))[1].children[0]._owner.stateNode;
+	stateNode.setState({ tokens: amount });
